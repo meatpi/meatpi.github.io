@@ -127,6 +127,69 @@
       flex-shrink: 0;
     }
 
+    .news {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 2rem;
+      border: 1px solid #2d3548;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 1rem;
+      padding: 0.875rem 1rem;
+      border-bottom: 1px solid #2d3548;
+    }
+
+    .news-item:last-child { border-bottom: none; }
+
+    .news-date {
+      font-size: 0.75rem;
+      color: #64748b;
+      white-space: nowrap;
+      padding-top: 0.1rem;
+      min-width: 5.5rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .news-text {
+      font-size: 0.875rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    .check-item .dot {
+      flex-shrink: 0;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      margin-top: 0.35rem;
+    }
+
+    .done .dot   { background: #4ade80; }
+    .needed .dot { background: #64748b; border: 1px solid #475569; background: transparent; }
+
+    .done   .check-text { color: #cbd5e1; }
+    .needed .check-text { color: #64748b; }
+
     footer {
       color: #475569;
       font-size: 0.8rem;
@@ -170,10 +233,19 @@
         <div class="icon icon-zip">⬡</div>
         <div class="file-info">
           <div class="file-name">rel-macos.zip</div>
-          <div class="file-type">Standard macOS binary (TBD)</div>
+          <div class="file-type">Standard MacOS binary (TBD)</div>
         </div>
         <span class="arrow">↓</span>
       </a>
+      <a class="download-link" href="#" download>
+        <div class="icon icon-zip">⬡</div>
+        <div class="file-info">
+          <div class="file-name">rel-linux.zip</div>
+          <div class="file-type">Standard Linux binary (TBD)</div>
+        </div>
+        <span class="arrow">↓</span>
+      </a>
+    </div>
     </div>
 
     <p class="section-label">Documentation</p>
@@ -194,6 +266,19 @@
         </div>
         <span class="arrow">↗</span>
       </a>
+    </div>
+
+    <p class="section-label">Done</p>
+    <div class="checklist">
+      <div class="check-item done"><div class="dot"></div><span class="check-text">Rough macos port</span></div>
+      <div class="check-item done"><div class="dot"></div><span class="check-text">Broken Linux port</span></div>
+    </div>
+
+    <p class="section-label">Needed</p>
+    <div class="checklist">
+      <div class="check-item needed"><div class="dot"></div><span class="check-text">Fix formatting of windows</span></div>
+      <div class="check-item needed"><div class="dot"></div><span class="check-text">Linux hangs during boot</span></div>
+      <div class="check-item needed"><div class="dot"></div><span class="check-text">Not even looked at gd, gplot, mem, pb and tw70xx</span></div>
     </div>
 
     <footer>
